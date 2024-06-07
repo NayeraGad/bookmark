@@ -5,33 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookmark</title>
     <link rel="shortcut icon" href="bookmark.png" type="image/x-icon" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
 
   <body data-bs-theme="dark">
     <div class="container">
-      <h1 class="mt-5 text-center">Bookmark</h1>
+      <header class="my-5 text-center">
+        <h1 class="fw-bold header-fontFamily">Bookmark</h1>
+      </header>
 
-      <div class="form">
+      <!-- Inputs -->
+      <div class="form py-4">
+        <h2 class="form-header mb-4 mx-auto header-fontFamily">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+
         <div class="mb-3">
-          <label for="siteName" class="form-label">Site Name</label>
+          <label for="siteName" class="form-label">
+            <i class="fa-solid fa-book-bookmark pe-2"></i>
+            Site Name</label
+          >
           <input type="text" class="form-control" id="siteName" />
         </div>
 
         <div class="mb-3">
-          <label for="siteURL" class="form-label">Site Name</label>
+          <label for="siteURL" class="form-label">
+            <i class="fa-solid fa-link pe-2"></i>
+            Site URL</label
+          >
           <input type="text" class="form-control" id="siteURL" />
         </div>
 
-        <button class="submitBtn btn btn-info btn-lg">Submit</button>
+        <button class="submitBtn btn yellow-bg d-block mx-auto mt-4 px-5 py-1">
+          Submit
+        </button>
       </div>
 
+      <!-- Display Bookmarks -->
       <div class="displayBox my-5">
-        <div class="row g-4"></div>
+        <div class="row mb-4 text-center">
+          <div class="col-2">
+            <span>Index</span>
+          </div>
+          <div class="col-4"><span>Website Name</span></div>
+          <div class="col-3">Visit</div>
+          <div class="col-3">Delete</div>
+        </div>
+
+        <div class="displayContent row g-4 text-center"></div>
+      </div>
+
+      <!-- Alert -->
+      <div
+        class="alertBox bg-dark px-2 bg-opacity-50 position-fixed start-0 top-0 end-0 bottom-0 d-none justify-content-center align-items-center"
+      >
+        <div class="alertContent bg-white p-4 rounded-2 shadow-lg text-black">
+          <header
+            class="box-header w-100 d-flex justify-content-between align-items-center mb-4"
+          >
+            <div class="circles d-flex">
+              <span class="circle tomato-bg rounded-circle me-2"></span>
+              <span class="circle yellow-bg rounded-circle me-2"></span>
+              <span class="circle green-bg rounded-circle me-2"></span>
+            </div>
+            <button class="closeBtn btn border-0">
+              <i class="fa-solid fa-xmark close fs-3"></i>
+            </button>
+          </header>
+
+          <p class="alert-info mb-2">
+            Site Name or Url is not valid, Please follow the rules below :
+          </p>
+
+          <ul class="rules list-unstyled m-0">
+            <li>
+              <i class="rules-icon fa-regular fa-circle-right p-2"></i>Site name
+              must contain at least 3 characters
+            </li>
+            <li>
+              <i class="rules-icon fa-regular fa-circle-right p-2"></i>Site URL
+              must be a valid one
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/d20a3d392e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Main JS -->
     <script src="index.js"></script>
   </body>
 </html>
